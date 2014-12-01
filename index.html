@@ -25,21 +25,25 @@
         <link rel="shortcut icon" href="images/favicon.ico" type="image/ico" />
     </head>
     <body>
-        <div class="cover">
-            <div class="cover-container">
-                <div class="content">
-                    <div class="content-background">
-                        <img class="logo" src="images/big-logo.jpg">
-                        <div class="date-container">
-                            <h2 class="date">March 28th 2015</h2>
-                        </div>
-                        <div class="coming-soon-box">
-                            <h3 class="coming-soon">Coming soon ...</h3>
-                        </div>
-                        <center><a href="http://hackbca.com/2014/" class="register">hackBCA I</a></center>
+        <div id="background"></div>
+        <div id="cover">
+            <div id="container">
+                <div id="content">
+                    <h1 id="title">hackBCA II</h1>
+                    <h2 id="date">March 28th 2015</h2>
+                    
+                    <div id="form">
+                        <input type="text" id="email-form" placeholder="Enter Your Email">
+
+                        <button id="getUpdates">
+                            <span>Get Updates</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="transition.js"></script>
     </body>
 </html>
