@@ -118,8 +118,25 @@ a:hover {
     -o-transition: all 0.25s ease-in-out;
     -ms-transition: all 0.25s ease-in-out;
 }
+
 .register:hover {
     background: rgba(255, 255, 255, 0.42);
     color: #fff;
     text-decoration: none;
+}
+
+.email-form {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    background: rgba(255, 255, 255, 0.27);
+    
+    margin: 50px 5px 25px 5px;
+    padding: 5px 25px;
+    border: 0;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Outage';
+    font-weight: 300;
+    text-align: center;
 }
