@@ -4,6 +4,7 @@
     <head>
         <title>hackBCA</title>
 
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
@@ -18,32 +19,56 @@
 
         <!-- Hide this line for IE (needed for Firefox and others) -->
         <![if !IE]>
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="static/comingsoon/images/favicon.ico" type="image/x-icon" />
         <![endif]>
+        <link rel="stylesheet" href="static/comingsoon/css/styles.css">
         <link rel="stylesheet" href="css/styles.css">
         <!-- This is needed for IE -->
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/ico" />
+        <link rel="shortcut icon" href="static/comingsoon/images/favicon.ico" type="image/ico" />
     </head>
     <body>
-        <div id="background"></div>
+        <!-- <div id="background"></div> -->
         <div id="cover">
             <div id="container">
                 <div id="content">
                     <h1 id="title">hackBCA II</h1>
                     <h2 id="date">March 28th 2015</h2>
-                    
                     <div id="form">
-                        <input type="text" id="email-form" placeholder="Enter Your Email">
+                        <input type="text" class="email" id="email-form" name='email' placeholder="Enter Your Email">
 
-                        <button id="getUpdates">
+                        <button id="getUpdates" onclick="x()">
                             <span>Get Updates</span>
                         </button>
+                        <a href="http://hackbca.com/" class="hackBCAI">Check out hackBCA I</a>
                     </div>
                 </div>
             </div>
         </div>
         
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="static/comingsoon/transition.js"></script>
         <script src="transition.js"></script>
+        <script type="text/javascript">
+        function x () {
+            $.ajax({
+                type: "POST",
+                url: 'http://hackbca.herokuapp.com/',
+                data: {'email':$('.email').val()},
+                success: function(data){
+                    if(data == "success"){
+                        $('.error').remove();
+                        $('#form').remove();
+                        $('#content').append('<h3>We will email you soon!</h3>');
+                    }else if(data == 'Cannot leave blank!'){
+                        $('.error').remove();
+                        $('#content').append('<h3 class="error" style="color:#e74c3c">Cannot leave blank!</h3>');
+                    }else{
+                        $('.error').remove();
+                        $('#content').append('<h3 class="error" style="color:#e74c3c">Enter valid email!</h3>');
+                    }
+                }
+            });
+        }
+        </script>
     </body>
 </html>

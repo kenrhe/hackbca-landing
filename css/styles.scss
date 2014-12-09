@@ -66,12 +66,16 @@ a {
     height: 100%;
     
     background: url(../images/bg.jpg) no-repeat bottom center scroll;
-    
-    filter: brightness(15%);
-    -webkit-filter: brightness(15%);
-    -moz-filter: brightness(15%);
-    -o-filter: brightness(15%);
-    -ms-filter: brightness(15%);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    filter: brightness(35%);
+    -webkit-filter: brightness(35%);
+    -moz-filter: brightness(35%);
+    -o-filter: brightness(35%);
+    -ms-filter: brightness(35%);
 }
 
 #cover {
@@ -81,6 +85,12 @@ a {
     height: 100%;
     
     color: #FFF;
+    background: url(../images/bg.jpg) no-repeat bottom center scroll;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
     
     #container {
         display: table-cell;
@@ -106,6 +116,26 @@ a {
                 
                 margin-top: 0px;
                 padding-top: 0px;
+            }
+            
+            @media screen and (max-width: 720px) {
+                #title {
+                    font-size: 81px;
+                    font-family: $glober;
+                    font-weight: 300;
+
+                    margin-bottom: 0px;
+                    padding-bottom: 0px;
+                }
+
+                #date {
+                    font-size: 38px;
+                    font-family: $glober;
+                    font-weight: 300;
+
+                    margin-top: 0px;
+                    padding-top: 0px;
+                }
             }
         }
     }
@@ -140,9 +170,43 @@ a {
 }
 
 #getUpdates:hover {
+    font-size: 18px;
+    font-family: 'Glober', 'Open Sans';
+    font-weight: 400;
     background: rgba(255, 255, 255, 0.42);
     color: #fff;
     text-decoration: none;
+}
+
+.hackBCAI {
+    position: absolute;
+    width: 200px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -100px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 18px;
+    font-family: 'Glober', 'Open Sans';
+    font-weight: 400;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    
+    &:hover {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.92);
+    }
+    
+    &:active {
+        text-decoration: none;
+    }
+    
+    &:focus {
+        text-decoration: none;
+    }
 }
 
 #email-form {
@@ -158,6 +222,11 @@ a {
     font-size: 18px;
     font-family: 'Glober', 'Open Sans';
     font-weight: 400;
-    font-weight: 400;
     text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+    #email-form {
+        max-width: 380px;
+    }
 }
