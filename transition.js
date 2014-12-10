@@ -13,4 +13,4 @@ TweenLite.from (form, 1.3, { opacity: 0, width: "80%", delay: 1.3});
 var bg = $("#background");
 var content = $("#content");
 TweenLite.from (bg, 1.0, { opacity: 0 });
-TweenLite.from (content, 1.3, { opacity: 0, width: "80%", delay: 1.3});
+TweenLite.from (content, 1.3, { opacity: 0, width: "80%", delay: .2});
